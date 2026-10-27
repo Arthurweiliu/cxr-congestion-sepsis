@@ -1,0 +1,11 @@
+d <- read.csv("F:/openclaw_workspace/CXR_congestion/data/final_cohort.csv", stringsAsFactors = FALSE)
+cat("n =", nrow(d), "\n")
+cat("fb24 median =", round(median(d$fb24_mlkg, na.rm = TRUE), 1),
+    " fb72 median =", round(median(d$fb72_mlkg, na.rm = TRUE), 1), "\n")
+cat("cor(fb24, fb72) =", round(cor(d$fb24_mlkg, d$fb72_mlkg, use = "complete.obs"), 4), "\n")
+cat("mean |fb24-fb72| =", round(mean(abs(d$fb24_mlkg - d$fb72_mlkg), na.rm = TRUE), 2), "\n")
+cat("identical within 1 mL/kg:", round(100 * mean(abs(d$fb24_mlkg - d$fb72_mlkg) < 1, na.rm = TRUE), 1), "%\n")
+cat("fb24 range:", round(range(d$fb24_mlkg, na.rm = TRUE), 1), "\n")
+cat("fb72 range:", round(range(d$fb72_mlkg, na.rm = TRUE), 1), "\n")
+cat("cong+ =", sum(d$cong_hybrid == 1), " (", round(100*mean(d$cong_hybrid==1),1), "%)\n")
+cat("30d deaths =", sum(d$death30), " (", round(100*mean(d$death30),1), "%)\n")

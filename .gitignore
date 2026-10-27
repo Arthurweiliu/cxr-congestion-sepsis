@@ -1,0 +1,6 @@
+﻿data/
+*.csv
+!tables/*.csv
+.Rhistory
+.RData
+*.docx
