@@ -162,8 +162,7 @@ Discrimination was assessed in two steps. In the primary analysis, congestion wa
 
 ### 3.7. Selection into the radiograph cohort
 
-Patients who underwent a radiograph were similar to those who did not: standardised mean differences were below 0.10 for age, sex, SOFA, ventilation, vasopressor use, heart failure and chronic kidney disease, and 0.08 for 30-day mortality (21.8% vs 18.5%). A model predicting radiography achieved an AUC of only 0.53. Inverse probability weighting left the exposure estimates essentially unchanged (group C 1.49, 1.02–2.18); this model did not include lactate, because the selection model could not accommodate a variable missing in 11.7% of patients, so it serves only as a check on direction.
-
+Patients who underwent a radiograph were similar to those who did not: standardised mean differences were below 0.10 for age, sex, SOFA, ventilation, vasopressor use, heart failure and chronic kidney disease, and 0.08 for 30-day mortality (21.8% vs 18.5%). A model predicting radiography achieved an AUC of only 0.53. 
 ### 3.8. Functional form, interaction and time dependence
 
 We examined whether the relation between fluid balance and mortality was linear, whether it differed by radiographic congestion, and how it depended on the length of the observation window. A natural cubic spline (equivalent to a restricted cubic spline; 4 degrees of freedom) did not improve on a linear term for 72-h balance (likelihood ratio χ²=4.46, df=3, p=0.22). The adjusted odds ratio rose monotonically with balance, reaching 2.61 (95% CI 2.01–3.38) at +123 mL/kg relative to zero balance; the linear estimate was 1.06 per 10 mL/kg (1.04–1.07; Figure 5). Over a 24-h window there was neither a gradient nor evidence of non-linearity (χ²=2.29, df=3, p=0.52), and the linear estimate was 1.02 per 10 mL/kg (0.99–1.04, p=0.18).
