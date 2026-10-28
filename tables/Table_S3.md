@@ -15,6 +15,9 @@ Multiple imputation (m = 20); adjusted for age, sex, SOFA, lactate, ventilation,
 | S12 Strict impression-only | 2532 | 523 | 2.18 (1.43-3.31) | **2.16 (1.36-3.43)** | 4.13 (2.71-6.28) | 1.7e-12 |
 | S11 In-hospital mortality | 3955 | 641 | 2.57 (1.77-3.72) | **1.82 (1.15-2.87)** | 4.77 (3.25-7.01) | 4e-18 |
 | S15 Lactate fallback hierarchy | 3955 | 831 | 1.90 (1.41-2.54) | **1.73 (1.20-2.47)** | 3.27 (2.40-4.47) | 4.7e-14 |
+| S16 Film before ICU admission (post hoc) | 2,486 | 571 | 1.43 (0.98-2.08) | **1.42 (0.89-2.28)** | 2.51 (1.68-3.74) | - |
 
-S15 (lactate fallback hierarchy) was added after the analysis plan was fixed.
+S15 (lactate fallback hierarchy) and S16 (temporal subset) were added after the analysis plan was fixed.
+The joint test is not shown for S16 because the subgroup was fitted separately.
+
 

@@ -179,7 +179,7 @@
   "film_q1": -3.5,
   "film_q3": 1.7,
   "pct_positive_balance": 72,
-  "sens_count": 9,
+  "sens_count": 10,
   "t2_group_b_no_congestion_balanc": 1.89,
   "t2_group_b_no_congestion_balanc_lcl": 1.41,
   "t2_group_b_no_congestion_balanc_ucl": 2.54,
@@ -225,7 +225,7 @@
   "inc_p": 0.033,
   "pct_C_of_cong": 12.5,
   "incivex_pct": 78.4,
-  "bonferroni": 0.006,
+  "bonferroni": 0.005,
   "auc_bal_3dp": 0.732,
   "kappa_2dp": -0.11,
   "sens_C_min": 1.42,
@@ -275,5 +275,6 @@
   "power_pct": 80,
   "smd_threshold": 0.1,
   "pct_C_of_congested": 37.2,
-  "pct_D_of_congested": 62.8
+  "pct_D_of_congested": 62.8,
+  "film_p90_gap": 5.7
 }
