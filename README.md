@@ -2,7 +2,7 @@
 
 Reproducibility package for the manuscript:
 
-> **Discordance between radiographic congestion and fluid balance in sepsis is associated with greater loop diuretic use: a cohort study of 3,955 patients**
+> **Radiographic congestion with a non-positive fluid balance is associated with greater loop diuretic use: a cohort study of 3,955 patients**
 > Wei Liu, Dongqing Ma, Jian Jiang, Xuefeng Xu, Rongjuan Zeng, Aoqiong Li, Bo Zhu (corresponding)
 
 ## What the study asks
@@ -74,4 +74,5 @@ The radiograph and the fluid chart disagree substantially, and a wet film with a
 ## Licence
 
 Code released under the MIT licence. Aggregate tables may be reused with attribution.
+
 
