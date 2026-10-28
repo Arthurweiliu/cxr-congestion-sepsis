@@ -1,8 +1,8 @@
-# Radiographic congestion, fluid balance and diuretic treatment in sepsis (MIMIC-IV)
+﻿# Radiographic congestion, fluid balance and diuretic treatment in sepsis (MIMIC-IV)
 
 Reproducibility package for the manuscript:
 
-> **Discordance between radiographic congestion and fluid balance in sepsis is partly explained by diuretic treatment: a cohort study of 3,963 patients**
+> **Discordance between radiographic congestion and fluid balance in sepsis is associated with greater loop diuretic use: a cohort study of 3,955 patients**
 > Wei Liu, Dongqing Ma, Jian Jiang, Xuefeng Xu, Rongjuan Zeng, Aoqiong Li, Bo Zhu (corresponding)
 
 ## What the study asks
@@ -21,10 +21,10 @@ Secondary analysis of **MIMIC-IV v2.2** and **MIMIC-CXR**, available from Physio
  7,050  chest radiograph within ±24 h of ICU admission
  6,595  matched to a radiology report
  4,576  classifiable for congestion status
- 3,963  analysed (classifiable, with calculable film-anchored balance)
+ 3,955  analysed (classifiable, with calculable film-anchored balance)
 ```
 
-832 deaths within 30 days (21.0%). Exposure window: from the index film to 72 h later.
+831 deaths within 30 days (21.0%). Exposure window: from the index film to 72 h later.
 
 ## Key results
 
@@ -74,3 +74,4 @@ The radiograph and the fluid chart disagree substantially, and a wet film with a
 ## Licence
 
 Code released under the MIT licence. Aggregate tables may be reused with attribution.
+

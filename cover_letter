@@ -1,0 +1,32 @@
+﻿# Cover Letter
+
+**To:** The Editorial Office, *Journal of Clinical Medicine*
+**Subject:** Submission of original research article
+
+Dear Editors,
+
+We submit for your consideration the manuscript entitled **"Discordance between radiographic congestion and fluid balance in sepsis is associated with greater loop diuretic use: a cohort study of 3,955 patients"** for publication in *Journal of Clinical Medicine* as an original research article.
+
+**What we asked.** In sepsis, congestion is assessed in two routine ways — the cumulative fluid balance on the chart and the chest radiograph. The chart records net whole-body fluid; the film shows water in the lung. They are commonly read together as though they described the same process. No large study has quantified how often they disagree, or whether either carries prognostic information the other does not.
+
+**What we found.** In 3,955 adults with Sepsis-3 criteria, an admission chest radiograph and calculable fluid balance, the two assessments agreed in only 35% of patients, less than chance would predict (Cohen's κ = −0.11). One in three patients with radiographic congestion had a non-positive fluid balance. Each measure was independently associated with 30-day mortality: relative to patients with neither finding, adjusted odds ratios were 1.89 for positive balance alone, 1.73 for radiographic congestion with a non-positive balance, and 3.25 for both. The estimate for the discordant group lay between 1.49 and 2.41 in eight of the eleven pre-specified sensitivity analyses, including restriction to impression-level reporting and exclusion of patients with heart failure; it was not significant with a 24-hour fluid window, with complete output recording, or with in-hospital mortality, and we report those three results in full.
+
+**What it adds.** Radiographic congestion identifies a group at higher risk that the fluid chart does not capture — patients who are older and more often have heart failure, yet are not more acidotic. At the same time, adding the radiograph to a model containing fluid balance, lactate and comorbidity raised the AUC only from 0.707 to 0.717. Both halves of that sentence matter: the film is informative, and it is not a risk-stratification tool. We think this is a useful correction to the assumption that the film and the chart are interchangeable.
+
+**What the timing shows.** Fluid balance was measured from the film onward, and the prognostic signal arose from fluid accrued between 24 and 72 hours rather than from the first day. A restricted cubic spline did not improve on a linear term, and the association did not differ by congestion status. Adding the continuous balance to the four-group model moved the estimates for positive balance alone and for concordant congestion towards the null, while the estimate for discordant congestion was unchanged; the excess risk of a large positive balance is therefore largely the risk of the volume itself. We report these analyses in full, with the imprecision that remains.
+
+**Why *JCM*.** The journal publishes clinical studies that answer questions clinicians ask at the bedside, and its readership includes the internists and intensivists who interpret both the film and the fluid chart. We have reported the analysis plan, every pre-specified sensitivity analysis, and the three that did not support the main finding.
+
+**Declarations.** The manuscript is original, has not been published previously and is not under consideration elsewhere. All authors have read and approved the submission and declare no conflicts of interest. MIMIC-IV and MIMIC-CXR are publicly available to credentialed users under a data use agreement; patient-level data cannot be shared, and analysis code plus aggregate tables will be deposited in a public repository. The study used fully de-identified data and was exempt from further ethics review.
+
+We hope the manuscript is suitable for peer review, and we would be glad to respond to any comments.
+
+Yours sincerely,
+
+**Bo Zhu, MD**
+Department of General Intensive Care Unit, Beijing Anzhen Hospital, Capital Medical University, Beijing, China
+zhubo123123@sina.com
+
+On behalf of all authors
+
+
