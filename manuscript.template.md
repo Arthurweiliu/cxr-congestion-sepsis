@@ -121,7 +121,7 @@ The two assessments agreed in only 36.6% of patients, against 42.8% expected by 
 
 ### 3.3. Mortality
 
-Thirty-day mortality was {{pct_mort_A}}% in group A, {{pct_mort_B}}% in group B, {{pct_mort_C}}% in group C and {{pct_mort_D}}% in group D (Figure 3). After adjustment, the odds ratios relative to group A were {{orB}} (95% CI {{orB_ci}}) for group B, {{orC}} (1.21–2.48) for group C and {{orD}} (2.38–4.44) for group D; the joint test across the three indicators was significant (p<0.001; Table 2). Lactate (OR 1.22 per mmol/L, 1.18–1.26), age (1.034 per year, 1.028–1.040), SOFA (1.08 per point, 1.02–1.13) and invasive ventilation (1.31, 1.09–1.57) were independently associated with mortality; heart failure (0.93, 0.76–1.12) and chronic kidney disease (1.06, 0.87–1.29) were not.
+Thirty-day mortality was {{pct_mort_A}}% in group A, {{pct_mort_B}}% in group B, {{pct_mort_C}}% in group C and {{pct_mort_D}}% in group D (Figure 3). After adjustment, the odds ratios relative to group A were {{orB}} (95% CI {{orB_ci}}) for group B, {{orC}} (1.21–2.48) for group C and {{orD}} (2.38–4.44) for group D; the joint test across the three indicators was significant (p<0.001; Table 2). Lactate (OR 1.22 per mmol/L, 1.18–1.26), age (1.03 per year, 1.03–1.04), SOFA (1.08 per point, 1.02–1.13) and invasive ventilation (1.31, 1.09–1.57) were independently associated with mortality; heart failure (0.93, 0.76–1.12) and chronic kidney disease (1.06, 0.87–1.29) were not.
 
 **Table 2. Adjusted association with 30-day mortality.**
 
@@ -130,7 +130,7 @@ Thirty-day mortality was {{pct_mort_A}}% in group A, {{pct_mort_B}}% in group B,
 | Group B (no congestion / balance >0) | 1.89 | 1.41–2.54 | <0.001 |
 | Group C (congestion / balance ≤0) | 1.73 | 1.21–2.48 | 0.003 |
 | Group D (congestion / balance >0) | 3.25 | 2.38–4.44 | <0.001 |
-| Age, per year | 1.034 | 1.028–1.040 | <0.001 |
+| Age, per year | 1.03 | 1.03–1.04 | <0.001 |
 | Female sex | 0.98 | 0.83–1.16 | 0.856 |
 | SOFA, per point | 1.08 | 1.02–1.13 | 0.003 |
 | Lactate, per mmol/L | 1.22 | 1.18–1.26 | <0.001 |
