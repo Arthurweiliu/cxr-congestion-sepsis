@@ -1,4 +1,4 @@
-# Discordance between radiographic congestion and fluid balance in sepsis is partly explained by diuretic treatment: a cohort study of 3,963 patients
+﻿# Discordance between radiographic congestion and fluid balance in sepsis is partly explained by diuretic treatment: a cohort study of 3,963 patients
 
 Wei Liu 1,*, Dongqing Ma 2, Jian Jiang 1, Xuefeng Xu 1, Rongjuan Zeng 1, Aoqiong Li 1 and Bo Zhu 1,*
 
@@ -270,7 +270,8 @@ In sepsis, radiographic congestion and the fluid chart show poor agreement (κ =
 
 **Figure 3.** Kaplan–Meier curves for 30-day survival by the four congestion/balance groups. The vertical axis spans the full 0–100% range. Curves for groups B and C cross within the first week.
 
-**Figure 4.** Odds ratio for discordant radiographic congestion (group C versus group A) in the primary and secondary analyses: nine sensitivity analyses, all pre-specified. The x axis is logarithmic.
+**Figure 4.** Odds ratio for discordant radiographic congestion (group C versus group A) in the primary and secondary analyses: nine sensitivity analyses. The x axis is logarithmic.
 
 **Figure 5.** Secondary analyses of functional form, interaction and time dependence. **Panel A:** adjusted odds ratio for 30-day mortality across the observed range of 72-h fluid balance, from a restricted cubic spline (4 degrees of freedom) with the reference set at zero balance; shaded band, 95% confidence interval. **Panel B:** the same for 24-h fluid balance. **Panel C:** four-group estimates by exposure window and after addition of the continuous 72-h balance; reference group A; logarithmic axis. Estimates are pooled across 20 imputations and adjusted for age, sex, SOFA score, lactate, invasive ventilation, vasopressors, heart failure and chronic kidney disease.
+
 
