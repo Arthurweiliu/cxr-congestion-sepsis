@@ -42,25 +42,25 @@ for (const [g, expN, expP] of [["A", 467, "12.2"], ["B", 2158, "19.0"], ["C", 43
 
 // 2. 稿件必须出现的字符串
 const must = [
-  ["abstract N", "3,963 adults with Sepsis-3 in MIMIC-IV (832 deaths, 21.0%)"],
+  ["abstract N", "3,955 adults with Sepsis-3 in MIMIC-IV (831 deaths, 21.0%)"],
   ["kappa", "κ = −0.11"],
   ["agreement 36.6%", "agreed in only 36.6%"],
-  ["OR B", "1.93 (95% CI 1.44–2.58)"],
-  ["OR C", "1.75 (1.22–2.51)"],
-  ["OR D", "3.31 (2.42–4.52)"],
-  ["AUC base", "0.7073"],
-  ["AUC +groups", "0.7252"],
-  ["dAUC", "ΔAUC 0.0086"],
-  ["spline LR", "χ²=1.46, df=3, p=0.69"],
+  ["OR B", "1.89 (95% CI 1.41–2.54)"],
+  ["OR C", "1.73 (1.21–2.48)"],
+  ["OR D", "3.25 (2.38–4.44)"],
+  ["AUC base", "0.7084"],
+  ["AUC +groups", "0.7259"],
+  ["dAUC", "ΔAUC 0.0083"],
+  ["spline LR", "χ²=4.46, df=3, p=0.22"],
   ["knot sensitivity", "p=0.65 and 0.78"],
-  ["interaction linear", "0.999 per 10 mL/kg, 0.972–1.026; p=0.93"],
-  ["interaction spline", "χ²=0.78, df=4; p=0.94"],
-  ["increment chi2", "χ²=105.1, df=4, p<0.001"],
-  ["first24 chi2", "χ²=10.6, df=4, p=0.031"],
+  ["interaction linear", "0.999 per 10 mL/kg, 0.972–1.027; p=0.97"],
+  ["interaction spline", "χ²=1.19, df=4; p=0.88"],
+  ["increment chi2", "χ²=104.6, df=4, p<0.001"],
+  ["first24 chi2", "χ²=10.5, df=4, p=0.033"],
   ["group C 24h", "1.14, 0.77–1.69"],
-  ["adjusted B", "1.93 to 1.11"],
-  ["adjusted D", "3.31 to 2.09"],
-  ["adjusted C", "1.77, 1.23–2.53"],
+  ["adjusted B", "1.89 to 1.12"],
+  ["adjusted D", "3.25 to 2.09"],
+  ["adjusted C", "1.75, 1.22–2.51"],
   ["Table S4 ref", "Table S4"],
   ["Figure 5A", "Figure 5A"],
   ["Figure 5B", "Figure 5B"],
@@ -113,6 +113,7 @@ fs.writeFileSync("F:/openclaw_workspace/CXR_congestion/submission_JCM_20261025/_
 console.log(log.join("\n"));
 console.log(`\n${fail === 0 ? "ALL PASS" : fail + " FAIL"}`);
 process.exit(fail === 0 ? 0 : 1);
+
 
 
 

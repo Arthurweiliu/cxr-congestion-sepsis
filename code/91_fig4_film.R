@@ -7,9 +7,9 @@ fr <- data.frame(
             "S4 excluding heart failure", "S5 frontal films only",
             "S6 24-h balance window", "S9 output complete",
             "S11 in-hospital death", "S12 strict definition", "S15 lactate fallback"),
-  OR  = c(1.75, 1.74, 1.70, 2.47, 1.69, 1.43, 1.57, 1.80, 2.24, 1.74),
-  lcl = c(1.22, 1.21, 1.16, 1.47, 1.18, 1.00, 1.07, 1.14, 1.41, 1.22),
-  ucl = c(2.51, 2.49, 2.49, 4.15, 2.43, 2.04, 2.30, 2.84, 3.57, 2.50))
+  OR  = c(1.73, 1.72, 1.69, 2.55, 1.68, 1.42, 1.55, 1.82, 2.16, 1.73),
+  lcl = c(1.21, 1.20, 1.15, 1.52, 1.17, 0.99, 1.06, 1.15, 1.36, 1.20),
+  ucl = c(2.48, 2.46, 2.47, 4.27, 2.41, 2.03, 2.27, 2.87, 3.43, 2.47))
 fr$label <- factor(fr$label, levels = rev(fr$label))
 
 p <- ggplot(fr, aes(OR, label)) +
