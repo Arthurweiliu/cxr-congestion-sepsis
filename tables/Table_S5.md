@@ -13,5 +13,5 @@ n = 3,944. A DNR/DNI or comfort-measures order was charted within 24 h of ICU ad
 | Group D | 3.23 (2.36–4.42) |
 | Documented limitation | 2.60 (1.87–3.62) |
 
-Covariates as in Table 2. Code status was taken from charted values of itemid 223758/228687.
+**Note.** DNR/DNI, do-not-resuscitate/do-not-intubate; OR, odds ratio; CI, confidence interval. Covariates as in Table 2. Code status was taken from charted values of itemid 223758/228687.
 Only status documented within the first 24 h is used; a limitation charted later in the stay is not adjusted for, because it is post-baseline.

@@ -17,3 +17,5 @@ Film-anchored exposure. Multiple imputation (m = 20); one imputation set shared 
 | B | 1.70 (1.33–2.18) |
 | C | 1.49 (1.09–2.04) |
 | D | 2.62 (2.00–3.43) |
+
+**Note.** OR, odds ratio; CI, confidence interval; CKD, chronic kidney disease. All models include age, sex, SOFA, lactate, invasive ventilation and vasopressors; M1–M3 differ only in the comorbidity terms named in the row labels.
