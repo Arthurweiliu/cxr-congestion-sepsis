@@ -1,3 +1,3 @@
-registry keys: 275
-numeric tokens: 478; untraceable: 0
+registry keys: 277
+numeric tokens: 485; untraceable: 0
 
