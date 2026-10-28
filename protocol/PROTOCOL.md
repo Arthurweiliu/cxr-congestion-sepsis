@@ -30,9 +30,9 @@ Four groups among classifiable patients: A (no congestion, balance ≤0), B (no 
 - Mortality: multivariable logistic regression of the four-level exposure, adjusted for age, sex, SOFA, lactate, invasive ventilation, vasopressors, heart failure and chronic kidney disease; multiple imputation (m = 20) for missing lactate; joint Wald test across group indicators.
 - Discrimination: congestion added to a model containing a natural cubic spline for 72-h balance (primary); four-level exposure added to a model without a balance term (secondary).
 - Secondary analyses: spline for non-linearity; interaction with congestion; 24-h versus 24–72 h increment; adjustment for continuous balance and for documented limitations of treatment.
-- Sensitivity analyses (nine): findings-first definition; 72-h landmark; excluding heart failure; frontal films only; 24-h window; complete output recording; in-hospital mortality; strict impression-only definition; lactate fallback hierarchy.
+- Sensitivity analyses (ten): findings-first definition; 72-h landmark; excluding heart failure; frontal films only; 24-h window; complete output recording; in-hospital mortality; strict impression-only definition; lactate fallback hierarchy; and a post hoc temporal comparison reported separately for films taken before and at or after ICU admission.
 
 ## Time anchoring
 
-The index film was taken a median of 1.4 h before ICU admission (IQR −3.5 to +1.7); 62.8% of films preceded admission and none followed it by more than 24 h.
+The index film was taken a median of 1.4 h before ICU admission (IQR −3.5 to +1.7); 62.5% of films preceded admission and none followed it by more than 24 h.
 

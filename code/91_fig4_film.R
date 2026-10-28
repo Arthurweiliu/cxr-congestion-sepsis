@@ -7,23 +7,24 @@ fr <- data.frame(
             "S4 excluding heart failure", "S5 frontal films only",
             "S6 24-h balance window", "S9 output complete",
             "S11 in-hospital death", "S12 strict definition", "S15 lactate fallback",
-            "S16 untruncated window (post hoc)"),
-  OR  = c(1.73, 1.72, 1.69, 2.55, 1.68, 1.42, 1.55, 1.82, 2.16, 1.73, 2.17),
-  lcl = c(1.21, 1.20, 1.15, 1.52, 1.17, 0.99, 1.06, 1.15, 1.36, 1.20, 1.22),
-  ucl = c(2.48, 2.46, 2.47, 4.27, 2.41, 2.03, 2.27, 2.87, 3.43, 2.47, 3.83))
+            "S16a film before ICU (truncated, post hoc)",
+            "S16b film at/after ICU (untruncated, post hoc)"),
+  OR  = c(1.75, 1.74, 1.69, 2.64, 1.71, 1.43, 1.55, 1.86, 2.17, 1.75, 1.40, 2.27),
+  lcl = c(1.22, 1.21, 1.15, 1.57, 1.18, 1.00, 1.06, 1.17, 1.36, 1.22, 0.87, 1.27),
+  ucl = c(2.52, 2.50, 2.47, 4.44, 2.46, 2.05, 2.27, 2.95, 3.47, 2.51, 2.25, 4.04))
 fr$label <- factor(fr$label, levels = rev(fr$label))
 
 p <- ggplot(fr, aes(OR, label)) +
   geom_vline(xintercept = 1, linetype = "dashed", colour = "grey50") +
   geom_errorbar(aes(xmin = lcl, xmax = ucl), width = 0.18, colour = "#2166ac") +
   geom_point(size = 2.4, colour = "#2166ac") +
-  scale_x_log10(breaks = c(0.75, 1, 1.5, 2, 3, 4), labels = c("0.75", "1.0", "1.5", "2.0", "3.0", "4.0")) +
+  scale_x_log10(breaks = c(0.75, 1, 1.5, 2, 3, 4, 5), labels = c("0.75", "1.0", "1.5", "2.0", "3.0", "4.0", "5.0")) +
   labs(x = "Odds ratio (group C vs A, log scale)", y = NULL,
-       title = "Discordant congestion and 30-day mortality: primary and ten sensitivity analyses") +
+       title = "Discordant congestion and 30-day mortality") +
   theme_bw(base_size = 9.5) +
   theme(plot.title = element_text(size = 9, face = "bold"),
         panel.grid.minor = element_blank())
-ggsave("v4/film/Fig4.pdf", p, width = 6.9, height = 4.4)
-ggsave("v4/film/Fig4.png", p, width = 6.9, height = 4.4, dpi = 300)
-ggsave("v4/film/Fig4.tiff", p, width = 6.9, height = 4.4, dpi = 600, device = "tiff", compression = "lzw")
+ggsave("v4/film/Fig4.pdf", p, width = 6.9, height = 4.6)
+ggsave("v4/film/Fig4.png", p, width = 6.9, height = 4.6, dpi = 300)
+ggsave("v4/film/Fig4.tiff", p, width = 6.9, height = 4.6, dpi = 600, device = "tiff", compression = "lzw")
 cat("Fig4 written with", nrow(fr), "rows\n")

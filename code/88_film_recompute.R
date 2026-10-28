@@ -10,11 +10,12 @@ f$fb10 <- f$fb/10; f$fb2410 <- f$fb24/10; f$inc10 <- f$inc/10
 f$cong <- as.integer(f$cong_hybrid)
 
 c0 <- "age + female + sofa_score + lac + vent24 + vaso24 + hf + ckd"
-vars <- c("death30","grp","cong","age","female","sofa_score","lac","vent24","vaso24","hf","ckd")
+f$grp <- factor(f$grp, levels = c("A","B","C","D"))
+vars <- c("death30","grp","age","female","sofa_score","lac","vent24","vaso24","hf","ckd")
 imp <- mice(f[, vars], m = 20, printFlag = FALSE)
 n72 <- ns(f$fb, df=4); n24 <- ns(f$fb24, df=4); nin <- ns(f$inc, df=4)
 mk <- function(m,p){d<-as.data.frame(unclass(m));names(d)<-paste0(p,1:ncol(d));d}
-bases <- lapply(1:20, function(i) cbind(complete(imp,i), fb10=f$fb10, fb2410=f$fb2410, inc10=f$inc10,
+bases <- lapply(1:20, function(i) cbind(complete(imp,i), cong=f$cong, fb10=f$fb10, fb2410=f$fb2410, inc10=f$inc10,
                                         mk(n72,"S72_"), mk(n24,"S24_"), mk(nin,"SIN_")))
 pool <- function(fits){B<-sapply(fits,coef);b<-rowMeans(B)
   T<-Reduce("+",lapply(fits,vcov))/length(fits)+(1+1/length(fits))*cov(t(B));se<-sqrt(diag(T))

@@ -5,15 +5,16 @@ set.seed(20261023)
 
 f <- read.csv("data/film_analysis.csv")
 di <- read.csv("data/diuretic_by_stay.csv")
-di$diu <- as.integer(di$loop_postfilm == 1 | di$tor_postfilm == 1)
+dw <- read.csv("data/diu_win.csv")
 cs <- read.csv("data/code_status.csv")[, c("stay_id","dnr_24h")]
 m <- f
-m$diu <- di$diu[match(m$stay_id, di$stay_id)]
+m$diu <- dw$diu_win[match(m$stay_id, dw$stay_id)]
 m$film_offset_h <- di$film_offset_h[match(m$stay_id, di$stay_id)]
 m$dnr_24h <- cs$dnr_24h[match(m$stay_id, cs$stay_id)]
 m$diu[is.na(m$diu)] <- 0; m$dnr_24h[is.na(m$dnr_24h)] <- 0
 m$fb10 <- m$fb72_mlkg/10
 f <- m
+f$grp <- factor(f$grp, levels = c("A","B","C","D"))
 
 R <- list()
 put <- function(k, v) R[[k]] <<- v
@@ -104,7 +105,8 @@ hl <- sum((obs-exp_)^2/(exp_*(1-exp_/nq)))
 put("hl_chi2", round(hl,2)); put("hl_p", round(pchisq(hl,8,lower.tail=FALSE),2))
 
 # subgroup film <= admission
-sub <- f[!is.na(f$film_offset_h) & f$film_offset_h <= 0, ]
+sub <- f[!is.na(f$film_offset_h) & f$film_offset_h < 0, ]
+set.seed(20261023)
 imp2 <- mice(sub[, vars], m = 20, printFlag = FALSE)
 ps <- pool(lapply(1:20, function(i) glm(death30 ~ grp + age+female+sofa_score+lac+vent24+vaso24+hf+ckd, data=complete(imp2,i), family=binomial)))
 put("sub_n", nrow(sub)); put("sub_deaths", sum(sub$death30))

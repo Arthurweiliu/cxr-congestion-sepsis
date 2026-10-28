@@ -2,8 +2,8 @@
 
 | Definition | n | Observed agreement | Expected agreement | κ | PABAK | Ppos | Pneg |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Hybrid (primary) | 3955 | 0.366 | 0.428 | -0.109 (-0.135 to -0.082) | -0.268 | 0.401 | 0.327 |
-| Strict impression-only | 2532 | 0.424 | 0.484 | -0.115 (-0.153 to -0.078) | -0.152 | 0.497 | 0.327 |
+| Hybrid (primary) | 3944 | 0.365 | 0.428 | -0.109 (-0.136 to -0.083) | -0.270 | 0.401 | 0.325 |
+| Strict impression-only | 2526 | 0.424 | 0.484 | -0.116 (-0.154 to -0.079) | -0.153 | 0.497 | 0.325 |
 
 κ = Cohen's kappa; PABAK = prevalence-adjusted bias-adjusted kappa (2·Po − 1);
 Ppos/Pneg = positive and negative agreement (Byrt et al.). Fluid balance is measured from the film to 72 h later.

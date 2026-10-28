@@ -4,6 +4,7 @@ suppressPackageStartupMessages(library(mice))
 set.seed(20261023)
 
 f <- read.csv("data/film_analysis.csv")
+f$grp <- factor(f$grp, levels = c("A","B","C","D"))
 d <- read.csv("data/diuretic_by_stay.csv")[, c("stay_id","film_offset_h")]
 f$off <- d$film_offset_h[match(f$stay_id, d$stay_id)]
 cat("missing offset:", sum(is.na(f$off)), "\n")

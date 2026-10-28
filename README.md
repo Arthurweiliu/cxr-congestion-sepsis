@@ -1,8 +1,8 @@
-﻿# Radiographic congestion, fluid balance and diuretic treatment in sepsis (MIMIC-IV)
+# Radiographic congestion, fluid balance and diuretic treatment in sepsis (MIMIC-IV)
 
 Reproducibility package for the manuscript:
 
-> **Radiographic congestion with a non-positive fluid balance is associated with greater loop diuretic use: a cohort study of 3,955 patients**
+> **Discordance between radiographic congestion and the charted fluid balance in sepsis: a cohort study of 3,944 patients**
 > Wei Liu, Dongqing Ma, Jian Jiang, Xuefeng Xu, Rongjuan Zeng, Aoqiong Li, Bo Zhu (corresponding)
 
 ## What the study asks
@@ -21,24 +21,25 @@ Secondary analysis of **MIMIC-IV v2.2** and **MIMIC-CXR**, available from Physio
  7,050  chest radiograph within ±24 h of ICU admission
  6,595  matched to a radiology report
  4,576  classifiable for congestion status
- 3,955  analysed (classifiable, with calculable film-anchored balance)
+ 4,341  film-anchored fluid balance calculable
+ 3,944  analysed after plausibility and timing screens
 ```
 
-831 deaths within 30 days (21.0%). Exposure window: from the index film to 72 h later.
+830 deaths within 30 days (21.0%). Exposure window: from the index film to 72 h later. Eleven patients whose film chart time could not be recovered, whose 72-h window therefore contained no charted intake or output, were excluded rather than assigned a balance of zero.
 
 ## Key results
 
 | Analysis | Result |
 |---|---|
-| Agreement, film vs subsequent 72-h balance | κ = −0.109 (95% CI −0.136 to −0.083); observed 36.6%, expected 42.9% |
-| Congestion with a non-positive balance | 500 / 1,338 (37.4%) |
-| 30-day mortality, A / B / C / D | 10.4% / 20.0% / 18.2% / 32.8% |
-| Adjusted OR vs A | B 1.93 (1.44–2.58); C 1.75 (1.22–2.51); D 3.31 (2.42–4.52) |
-| Discrimination | AUC 0.7315 → 0.7401 with congestion over a spline for balance (ΔAUC 0.0086, 0.0028–0.0153) |
-| Loop diuretics after the film | A 37.3%, B 19.2%, C 68.8%, D 36.0%; adjusted OR C vs A 2.85 (2.18–3.73) |
-| Within group C, treated vs untreated | 72-h balance −28.2 vs −8.9 mL/kg |
-| Non-linearity | χ² = 4.27, df = 3, p = 0.23 (spline vs linear) |
-| Interaction with congestion | OR 0.999 (0.972–1.026), p = 0.93 |
+| Agreement, film vs subsequent 72-h balance | κ = −0.109 (95% CI −0.136 to −0.083); observed 36.5%, expected 42.8% |
+| Congestion with a non-positive balance | 493 / 1,331 (37.0%) |
+| 30-day mortality, A / B / C / D | 10.5% / 20.0% / 18.3% / 32.8% |
+| Adjusted OR vs A | B 1.90 (1.42–2.56); C 1.75 (1.22–2.52); D 3.27 (2.39–4.48) |
+| Discrimination | AUC 0.7321 → 0.7403 with congestion over a spline for balance (ΔAUC 0.0083, 0.0015–0.0159) |
+| Loop diuretics after the film | A 37.4%, B 19.1%, C 68.8%, D 35.9%; adjusted OR C vs A 2.84 (2.16–3.72) |
+| Within group C, treated vs untreated | 72-h balance −27.8 vs −8.9 mL/kg |
+| Non-linearity | χ² = 3.98, df = 3, p = 0.26 (spline vs linear) |
+| Interaction with congestion | OR 0.999 (0.972–1.027), p = 0.95 |
 
 ## Contents
 

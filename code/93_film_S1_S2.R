@@ -3,29 +3,37 @@ setwd("F:/openclaw_workspace/CXR_congestion")
 suppressPackageStartupMessages(library(mice))
 set.seed(20261023)
 f <- read.csv("data/film_analysis.csv")
+f$female <- as.integer(f$gender == "F")
 f$cong <- as.integer(f$cong_hybrid); f$fb <- f$fb72_mlkg
 f$grp <- factor(ifelse(f$cong==1, ifelse(f$fb>0,"D","C"), ifelse(f$fb>0,"B","A")), levels=c("A","B","C","D"))
 
-runMI <- function(dat, rhs, outcome="death30") {
-  dd <- data.frame(y = dat[[outcome]], grp = dat$grp, age = dat$age, female = dat$female,
-                   sofa = dat$sofa_score, lac = dat$lac, vent = dat$vent24, vaso = dat$vaso24,
-                   hf = dat$hf, ckd = dat$ckd, cci = dat$cci)
-  dd <- dd[complete.cases(dd[, c("y","grp","age","female","sofa","vent","vaso","hf","ckd","cci")]), ]
-  imp <- mice(dd, m = 20, printFlag = FALSE)
-  fits <- lapply(1:20, function(i) glm(as.formula(paste("y ~", rhs)), data = complete(imp, i), family = binomial))
+# One imputation set, identical to the frame used for Table 2, shared by all three
+# specifications so that only the comorbidity terms differ across models.
+dd <- data.frame(death30 = f$death30, grp = f$grp, age = f$age, female = f$female,
+                 sofa_score = f$sofa_score, lac = f$lac, vent24 = f$vent24,
+                 vaso24 = f$vaso24, hf = f$hf, ckd = f$ckd)
+imp <- mice(dd, m = 20, printFlag = FALSE)
+
+poolFit <- function(rhs, outcome = "death30") {
+  fits <- lapply(1:20, function(i) {
+    d <- complete(imp, i)
+    d$cci <- f$cci
+    d$death90 <- f$death90
+    glm(as.formula(paste(outcome, "~", rhs)), data = d, family = binomial)
+  })
   B <- sapply(fits, coef); b <- rowMeans(B)
   T <- Reduce("+", lapply(fits, vcov))/20 + (1+1/20)*cov(t(B)); se <- sqrt(diag(T))
   data.frame(term = names(b), OR = exp(b), lcl = exp(b-1.96*se), ucl = exp(b+1.96*se))
 }
 fmt <- function(r,t) sprintf("%.2f (%.2f–%.2f)", r$OR[r$term==t], r$lcl[r$term==t], r$ucl[r$term==t])
 
-m1 <- runMI(f, "grp + age + female + sofa + lac + vent + vaso + cci + hf + ckd")
-m2 <- runMI(f, "grp + age + female + sofa + lac + vent + vaso + cci")
-m3 <- runMI(f, "grp + age + female + sofa + lac + vent + vaso + hf + ckd")
-d90 <- runMI(f, "grp + age + female + sofa + lac + vent + vaso + hf + ckd", "death90")
+m1 <- poolFit("grp + age + female + sofa_score + lac + vent24 + vaso24 + cci + hf + ckd")
+m2 <- poolFit("grp + age + female + sofa_score + lac + vent24 + vaso24 + cci")
+m3 <- poolFit("grp + age + female + sofa_score + lac + vent24 + vaso24 + hf + ckd")
+d90 <- poolFit("grp + age + female + sofa_score + lac + vent24 + vaso24 + hf + ckd", "death90")
 
 L1 <- c("# Table S1. Model specification and secondary outcomes", "",
-  "Film-anchored exposure. Multiple imputation (m = 20); only the comorbidity terms differ across models.", "",
+  "Film-anchored exposure. Multiple imputation (m = 20); one imputation set shared across models; only the comorbidity terms differ.", "",
   "**30-day mortality**", "", "| Model | Group B | Group C | Group D |", "|---|---|---|---|",
   sprintf("| M1: Charlson index + heart failure + CKD | %s | %s | %s |", fmt(m1,"grpB"), fmt(m1,"grpC"), fmt(m1,"grpD")),
   sprintf("| M2: Charlson index only | %s | %s | %s |", fmt(m2,"grpB"), fmt(m2,"grpC"), fmt(m2,"grpD")),
@@ -56,3 +64,4 @@ L2 <- c("# Table S2. Agreement between radiographic congestion and film-anchored
   "Ppos/Pneg = positive and negative agreement (Byrt et al.). Fluid balance is measured from the film to 72 h later.")
 writeLines(enc2utf8(L2), "v4/film/S2.md")
 cat("S1 and S2 written\n")
+cat("M3 check:", fmt(m3,"grpB"), "|", fmt(m3,"grpC"), "|", fmt(m3,"grpD"), "\n")
