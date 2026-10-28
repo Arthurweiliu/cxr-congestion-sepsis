@@ -1,0 +1,15 @@
+setwd("F:/openclaw_workspace/CXR_congestion")
+.libPaths(c("F:/openclaw_workspace/Rlibs", "F:/openclaw_workspace/R_lib", .libPaths()))
+suppressPackageStartupMessages(library(mice))
+set.seed(20261023)
+f <- read.csv("data/film_analysis.csv")
+d <- read.csv("data/diuretic_by_stay.csv")[, c("stay_id","film_offset_h")]
+m <- merge(f, d, by = "stay_id", all.x = TRUE)
+sub <- m[!is.na(m$film_offset_h) & m$film_offset_h <= 0, ]
+cat("subgroup n =", nrow(sub), " deaths =", sum(sub$death30), "\n")
+v <- c("death30","grp","age","female","sofa_score","lac","vent24","vaso24","hf","ckd")
+imp <- mice(sub[, v], m = 20, printFlag = FALSE)
+fits <- lapply(1:20, function(i) glm(death30 ~ grp + age + female + sofa_score + lac + vent24 + vaso24 + hf + ckd, data = complete(imp,i), family = binomial))
+B <- sapply(fits, coef); b <- rowMeans(B); T <- Reduce("+", lapply(fits, vcov))/20 + (1+1/20)*cov(t(B)); se <- sqrt(diag(T))
+for (t in c("grpB","grpC","grpD")) cat(sprintf("%s %.2f (%.2f-%.2f)\n", t, exp(b[t]), exp(b[t]-1.96*se[t]), exp(b[t]+1.96*se[t])))
+cat("congestion prevalence:", round(100*mean(f$cong_hybrid==1),1), "%\n")
