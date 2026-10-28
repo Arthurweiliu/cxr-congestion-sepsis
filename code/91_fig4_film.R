@@ -7,10 +7,10 @@ fr <- data.frame(
             "S4 excluding heart failure", "S5 frontal films only",
             "S6 24-h balance window", "S9 output complete",
             "S11 in-hospital death", "S12 strict definition", "S15 lactate fallback",
-            "S16 film before admission (post hoc)"),
-  OR  = c(1.73, 1.72, 1.69, 2.55, 1.68, 1.42, 1.55, 1.82, 2.16, 1.73, 1.42),
-  lcl = c(1.21, 1.20, 1.15, 1.52, 1.17, 0.99, 1.06, 1.15, 1.36, 1.20, 0.89),
-  ucl = c(2.48, 2.46, 2.47, 4.27, 2.41, 2.03, 2.27, 2.87, 3.43, 2.47, 2.28))
+            "S16 untruncated window (post hoc)"),
+  OR  = c(1.73, 1.72, 1.69, 2.55, 1.68, 1.42, 1.55, 1.82, 2.16, 1.73, 2.17),
+  lcl = c(1.21, 1.20, 1.15, 1.52, 1.17, 0.99, 1.06, 1.15, 1.36, 1.20, 1.22),
+  ucl = c(2.48, 2.46, 2.47, 4.27, 2.41, 2.03, 2.27, 2.87, 3.43, 2.47, 3.83))
 fr$label <- factor(fr$label, levels = rev(fr$label))
 
 p <- ggplot(fr, aes(OR, label)) +
